@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { getPadTime } from "./helpers/getPadTime";
-import "./style.css";
+import { getPadTime } from "./lib/getPadTime";
+import "./App.css";
+import Timer from "./components/Timer/Timer";
+import InputValue from "./components/InputValue/InputValue";
+import Buttons from "./components/Buttons/Buttons";
 
 function App() {
   const [timeLeft, setTimeLeft] = useState(120);
@@ -25,7 +28,7 @@ function App() {
 
   const handleStart = () => {
     if (timeLeft === 0) setTimeLeft(5);
-
+    
     setIsCounting(true);
   };
 
@@ -38,32 +41,17 @@ function App() {
     setTimeLeft(inputMinutes);
   };
 
-  function setMinutes(event) {
-    setTimeLeft(event.target.value);
-    setInputMinutes(event.target.value);
+  const setMinutes = (event) => {
+    const value = event.target.value;
+    setTimeLeft(value);
+    setInputMinutes(value);
   }
 
   return (
     <div className="app">
-      <section className="inputValue">
-        <div className="minutes">
-          <p>Set time (in seconds)</p>
-          <input type="text" onInput={setMinutes} />
-        </div>
-      </section>
-      <div className="timer">
-        <span>{minutes}</span>
-        <span>:</span>
-        <span>{seconds}</span>
-      </div>
-      <div className="buttons">
-        {isCounting ? (
-          <button onClick={handleStop}>Stop</button>
-        ) : (
-          <button onClick={handleStart}>Start</button>
-        )}
-        <button onClick={handleReset}>Reset</button>
-      </div>
+      <InputValue setMinutes={setMinutes}/>
+      <Timer minutes={minutes} seconds={seconds}/>
+      <Buttons handleStop={handleStop} handleStart={handleStart} handleReset={handleReset} isCounting={isCounting}/>
     </div>
   );
 }
