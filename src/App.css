@@ -46,18 +46,26 @@
   flex-direction: column;
 }
 .minutes input[type=text] {
+  padding: 10px;
   align-self: flex-end;
   width: 35%;
   background: transparent;
-  border: 0px;
-  border-bottom: 1px solid #000;
-  border-right: 1px solid #000;
+  border: 1px solid #000;
   border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
   font-size: 20px;
 }
 
 input[type=text]:focus {
-  background-color: #d4ddf1;
-  color: #A61F12;
+  background-color: #A61F12;
+  color: white;
+  border: 1px solid transparent;
+  border-top-left-radius: 10px;
   outline-style: none;
+}
+input[type=text]:focus::-moz-placeholder {
+  color: transparent;
+}
+input[type=text]:focus::placeholder {
+  color: transparent;
 }/*# sourceMappingURL=App.css.map */

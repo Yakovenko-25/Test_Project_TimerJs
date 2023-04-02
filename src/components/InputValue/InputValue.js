@@ -5,7 +5,7 @@ const InputValue = ({setMinutes}) => {
     <section className="inputValue">
       <div className="minutes">
         <p>Set time (in seconds)</p>
-        <input type="text" onInput={setMinutes} />
+        <input type="text" onInput={setMinutes} placeholder="seconds"/>
       </div>
     </section>
   );
