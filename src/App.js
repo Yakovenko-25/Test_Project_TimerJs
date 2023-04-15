@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getPadTime } from "./lib/getPadTime";
 import "./App.css";
-import Timer from "./components/Timer/Timer";
+import Timer from "./components/timer/timer";
 import InputValue from "./components/InputValue/InputValue";
 import Buttons from "./components/Buttons/Buttons";
 
@@ -27,7 +27,7 @@ function App() {
   }, [timeLeft, isCounting]);
 
   const handleStart = () => {
-    if (timeLeft === 0) setTimeLeft(5);
+    if (timeLeft === 0) setTimeLeft(inputMinutes);
     
     setIsCounting(true);
   };
