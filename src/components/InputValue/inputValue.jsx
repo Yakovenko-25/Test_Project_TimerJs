@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const inputValue = styled.section`
-    background-color: black;
-    width: 100;
+const Input = styled.section`
+
 `;
 
-const minutes = styled.div`
+const Minutes = styled.div`
     display: flex;
     background-color: black;
     flex-direction: column;
-`;
+    & p{
+      text-size: 50px;
+    }
+`; 
 
 const inputText = styled.input`
 
@@ -19,12 +21,12 @@ const inputText = styled.input`
 
 const InputValue = ({setMinutes}) => {
   return (
-    <inputValue>
-      <minutes>
+    <Input>
+      <Minutes>
         <p>Set time (in seconds)</p>
         <input type="text" onInput={setMinutes} placeholder="seconds"/>
-      </minutes>
-    </inputValue>
+      </Minutes>
+    </Input>
   );
 };
 

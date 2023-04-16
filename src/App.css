@@ -27,20 +27,6 @@
 
 
 
-.minutes {
-  
-}
-.minutes input[type=text] {
-  padding: 10px;
-  align-self: flex-end;
-  width: 35%;
-  background: transparent;
-  border: 1px solid #000;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 10px;
-  font-size: 20px;
-}
-
 input[type=text]:focus {
   background-color: #A61F12;
   color: white;
