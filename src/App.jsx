@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getPadTime } from "./lib/getPadTime";
-import Timer from "./components/timer/timer.jsx";
+import Timer from "./components/Timer/Timer.jsx";
 import InputValue from "./components/InputValue/inputValue.jsx";
 import Buttons from "./components/Buttons/Buttons";
 import styled from "styled-components";
