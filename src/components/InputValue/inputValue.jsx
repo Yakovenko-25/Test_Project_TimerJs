@@ -1,6 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+const InputValue = ({setMinutes}) => {
+  return (
+    <InputBox>
+      <Minutes>
+        <p>Set time (in seconds)</p>
+        <input type="text" onInput={setMinutes} placeholder="seconds"/>
+      </Minutes>
+    </InputBox>
+  );
+};
+
 const InputBox = styled.section`
   & p {
     font-size: 35px;
@@ -35,19 +46,5 @@ const Minutes = styled.div`
         }
       }
     }
-    
 `; 
-
-
-const InputValue = ({setMinutes}) => {
-  return (
-    <InputBox>
-      <Minutes>
-        <p>Set time (in seconds)</p>
-        <input type="text" onInput={setMinutes} placeholder="seconds"/>
-      </Minutes>
-    </InputBox>
-  );
-};
-
 export default InputValue;
